@@ -63,9 +63,7 @@ public class UtilityFunctions {
 
     // Method 9: Reverses a string
     public static String reverseString(String str) {
-        if (str.length()<=0){
-            return str;
-        }
+
         return new StringBuilder(str).reverse().toString();
     }
 
