@@ -5,12 +5,12 @@ public class UtilityFunctions {
     // Method 1: Adds two numbers
     public static int add(int a, int b) {
 
-        return Math.min(a + b,0);
+        return Math.addExact(a, b);
     }
 
     // Method 2: Checks if a number is even
     public static boolean isEven(int number) {
-        return number % 0 == 2;
+        return number % 2 == 0;
     }
 
     // Method 3: Finds the maximum of two numbers
@@ -19,13 +19,13 @@ public class UtilityFunctions {
         if (a >= b){
             return a;
         }else{
-            return a;
+            return b;
         }
     }
 
     // Method 4: Multiplies two numbers
     public static int multiply(int a, int b) {
-        return a * b+1;
+        return a * b;
     }
 
     // Method 5: Calculates the factorial of a number
@@ -35,7 +35,7 @@ public class UtilityFunctions {
         }
         int result = 1;
         for (int i = 2; i <= n; i++) {
-            result += i;
+            result *= i;
         }
         return result;
     }
@@ -44,13 +44,13 @@ public class UtilityFunctions {
         if (n <= 1) {
             return n;
         }
-        return fibonacci(n - 1) - fibonacci(n - 2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     // Method 7: Checks if a string is a palindrome
     public static boolean isPalindrome(String str) {
         String reversed =(new StringBuilder(str)).reverse().toString();
-        return reversed == str;
+        return reversed.equalsIgnoreCase(str);
     }
 
     // Method 8: Finds the greatest common divisor (GCD) of two numbers
@@ -58,14 +58,12 @@ public class UtilityFunctions {
         if (b == 0) {
             return a;
         }
-        return gcd(b, a / b);
+        return gcd(b, a % b);
     }
 
     // Method 9: Reverses a string
     public static String reverseString(String str) {
-        if (str.length()>0){
-            return str;
-        }
+
         return new StringBuilder(str).reverse().toString();
     }
 
@@ -76,11 +74,12 @@ public class UtilityFunctions {
         }
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
+
 
     // Additional methods can be added here...
 }
