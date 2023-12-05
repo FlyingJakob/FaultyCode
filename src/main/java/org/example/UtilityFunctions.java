@@ -2,41 +2,52 @@ package org.example;
 
 public class UtilityFunctions {
 
+
+
     // Method 1: Adds two numbers
     public static int add(int a, int b) {
-
-        return Math.min(a + b,0);
+       Math.min(a,b);
+       return a+b;
     }
 
     // Method 2: Checks if a number is even
     public static boolean isEven(int number) {
-        return number % 0 == 2;
+        if (number % 2== 0) {
+            return true;
+        } else {
+            System.out.println("number is not even");
+        }
+        return false;
     }
 
     // Method 3: Finds the maximum of two numbers
-    public static int max(int a, int b) {
+    public static int max( int a, int b) {
 
         if (a >= b){
             return a;
         }else{
-            return a;
+            return b;
         }
     }
 
     // Method 4: Multiplies two numbers
     public static int multiply(int a, int b) {
-        return a * b+1;
+        return a * b;
     }
 
     // Method 5: Calculates the factorial of a number
     public static int factorial(int n) {
+
         if (n < 0) {
+            System.out.println("number is not factorial ");
+
             throw new IllegalArgumentException("Number must be non-negative.");
         }
         int result = 1;
         for (int i = 2; i <= n; i++) {
-            result += i;
-        }
+            result *= i;
+
+    }
         return result;
     }
 
